@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="Dang Nhap Dang ky" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/styles.css">
+                
+        <!-- Boxicons CSS -->
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />              
+    </head>
+    <body>
+        <section class="container-2 forms">
+            <div class="form login">
+
+                <div class="form-content">
+                    <header>Đăng Nhập</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="email" placeholder="Nhập Email" class="input" id="mail">
+                            <div class="error" id="error-mail_a"></div>
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Nhập Password" class="password" id="password"> 
+                            <div class="error" id="error-password_a"></div>
+                            <i class='bx bx-hide eye-icon'></i>
+                            
+                        </div>
+
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Lấy lại mật khẩu?</a>
+                        </div>
+
+                        <div class="field button-field">
+                           <button id="btn-login"><a href="./index.html" style="color: white;">Đăng Nhập</a></button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Bạn có sẵn 1 tài khoản <a href="#" class="link signup-link">Đăng Ký</a></span>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="media-options">
+                    <a href="https://www.facebook.com/?stype=lo&jlou=AffPB8x84lm_QKIpnq6h3YOj0S6ju9ZOahjCwdyPzo0cGhkGh9zVoZvZ_NgGiedSGj3XYNqXgsU3fSMICS8EfXmkFbkA1weVnuOIAE9UDLICPg&smuh=6902&lh=Ac8E9D5zh-FAFbKP9ug" class="field facebook">
+                       <i class="bx bxl-facebook facebook-icon fa-brands fa-facebook"></i>
+                        <span>Đăng Nhập Bằng Facebook</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser" class="field google">
+                        <img src="./assets/img/gg.jpg" alt="" class="google-img">
+                        <span>Đăng Nhập Bằng Google</span>
+                    </a>
+                </div>
+
+            </div>     
+
+            <div class="form signup">
+                <div class="form-content">
+                    <header>Đăng Ký</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="email" placeholder="Nhập Email" class="input" id="mail">
+                            <div class="error" id="error-mail"></div>
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Nhập password" id="password" class="password">
+                            <div class="error" id="error-password"></div>
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Nhập Lại password"  id="ConfirmPassword" class="password">
+                            <div class="error" id="error-confirmpassword"></div>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <div class="field button-field btn-s">
+                            <button id="btn-sigup"> Đăng Ký </button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Bạn đã có sẵn 1 tài khoản<a href="#" class="link login-link">Đăng Nhập</a></span>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="media-options">
+                    <a href="https://www.facebook.com/?stype=lo&jlou=AffPB8x84lm_QKIpnq6h3YOj0S6ju9ZOahjCwdyPzo0cGhkGh9zVoZvZ_NgGiedSGj3XYNqXgsU3fSMICS8EfXmkFbkA1weVnuOIAE9UDLICPg&smuh=6902&lh=Ac8E9D5zh-FAFbKP9ug" class="field facebook">
+                        <i class="bx bxl-facebook facebook-icon fa-brands fa-facebook"></i>
+                        <span>Login with Facebook</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser" class="field google">
+                        <img src="./assets/img/gg.jpg" alt="" class="google-img">
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </body>
+    <script>
+let btnSigup=document.getElementById('btn-sigup');
+btnSigup.addEventListener('click',function(){
+    let mail = document.getElementById('mail');
+let errMail = document.getElementById('error-mail');
+errMail.innerText='';
+if(validateEmail(mail.value)==false){
+	errMail.innerText = 'Yêu cầu nhập gmail';
+}
+let Pass = document.getElementById('password');
+let errPass = document.getElementById('error-password');
+errPass.innerText='';
+if(Pass.value.length ==0 ){
+	errPass.innerText = 'Password không được để trống';
+}
+let cfPass = document.getElementById('ConfirmPassword');
+let errcfPass = document.getElementById('error-confirmpassword');
+errcfPass.innerText='';
+if(cfPass.value.length ==0 ){
+	errcfPass.innerText = 'Password không được để trống';
+}
+if(cfPass.value != Pass.value  ){
+	errPass.innerText = 'Yêu cầu nhập đúng mật khẩu';
+	errcfPass.innerText = 'Yêu cầu nhập lại đúng mật khẩu';
+}
+if(errPass.innerText == '' && errMail.innerText == ''){
+alert('ban da dang ky thang cong');
+};
+});
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+let btnLogin=document.getElementById('btn-login');
+btnLogin.addEventListener('click',function(){
+
+    let mail_a = document.getElementById('mail');
+let errMail = document.getElementById('error-mail_a');
+errMail.innerText='';
+if(validateEmail(mail.value)==false){
+	errMail.innerText = 'Yêu cầu nhập gmail';
+}
+let Pass = document.getElementById('password');
+let errPass = document.getElementById('error-password_a');
+errPass.innerText='';
+if(Pass.value.length ==0 ){
+	errPass.innerText = 'Password không được để trống';
+}
+if(errMail.innerText=='' &&errPass.innerText==''){
+    alert('Dang nhap thanh cong');
+    window.location.href = './index.html';
+}
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         const forms = document.querySelector(".forms"),
+      pwShowHide = document.querySelectorAll(".eye-icon"),
+      links = document.querySelectorAll(".link");
+
+pwShowHide.forEach(eyeIcon => {
+    eyeIcon.addEventListener("click", () => {
+        let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+        
+        pwFields.forEach(password => {
+            if(password.type === "password"){
+                password.type = "text";
+                eyeIcon.classList.replace("bx-hide", "bx-show");
+                return;
+            }
+            password.type = "password";
+            eyeIcon.classList.replace("bx-show", "bx-hide");
+        })
+        
+    })
+})      
+links.forEach(link => {
+    link.addEventListener("click", e => {
+       e.preventDefault(); //preventing form submit
+       forms.classList.toggle("show-signup");
+    })
+})
+
+    </script>
+</html>
